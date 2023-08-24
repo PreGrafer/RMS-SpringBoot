@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17b27035-d05f-48ea-9954-d2e61be00201" name="更改" comment="Initial commit">
+    <list default="true" id="17b27035-d05f-48ea-9954-d2e61be00201" name="更改" comment="完成前端布局">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/ForgotPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/ForgotPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/LoginPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/RegisterPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/RegisterPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +18,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Options API Component" />
-        <option value="Vue Composition API Component" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Vue Composition API Component" />
+        <option value="Vue Options API Component" />
       </list>
     </option>
   </component>
@@ -53,7 +56,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": -1
+  "associatedIndex": 5
 }]]></component>
   <component name="ProjectId" id="2U4ENIVn5l1W0MkMCUl8vy3dARS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -76,7 +79,7 @@
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WEB/RMS-SpringBoot&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WEB/RMS-SpringBoot/rms-frontend/src/components/Worker&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -87,7 +90,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.3689655&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;2552fca24d06eb715d7948df267782c6&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Program Files (x86)\\IntelliJ IDEA 2022.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -97,13 +100,14 @@
       &quot;mysql&quot;
     ],
     &quot;vue.recent.templates&quot;: [
-      &quot;Vue Options API Component&quot;,
-      &quot;Vue Composition API Component&quot;
+      &quot;Vue Composition API Component&quot;,
+      &quot;Vue Options API Component&quot;
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WEB\RMS-SpringBoot\rms-frontend\src\components\Worker" />
       <recent name="D:\WEB\RMS-SpringBoot\rms-frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -183,6 +187,15 @@
       <workItem from="1692449522555" duration="110000" />
       <workItem from="1692449645653" duration="377000" />
       <workItem from="1692450025290" duration="21000" />
+      <workItem from="1692450048192" duration="422000" />
+      <workItem from="1692528205028" duration="1002000" />
+      <workItem from="1692604125363" duration="616000" />
+      <workItem from="1692681802259" duration="259000" />
+      <workItem from="1692682188756" duration="270000" />
+      <workItem from="1692777227406" duration="7935000" />
+      <workItem from="1692788502622" duration="29000" />
+      <workItem from="1692864056298" duration="4544000" />
+      <workItem from="1692868755811" duration="1785000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />
@@ -256,7 +269,39 @@
       <option name="project" value="LOCAL" />
       <updated>1692449991941</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1692450100276</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1692450100276</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1692450138834</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1692450138834</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1692450145451</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1692450145451</updated>
+    </task>
+    <task id="LOCAL-00013" summary="完成前端布局">
+      <option name="closed" value="true" />
+      <created>1692870463637</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1692870463637</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +329,8 @@
     <MESSAGE value="登录界面" />
     <MESSAGE value="注册功能完善" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="完成前端布局" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成前端布局" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

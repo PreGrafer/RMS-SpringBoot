@@ -1,27 +1,9 @@
 <script setup>
-import {Avatar, Lock, Message, User, Link, Bell} from "@element-plus/icons-vue";
+import {Bell, Link, Lock, Message, User} from "@element-plus/icons-vue";
+import {ElButton, ElDivider, ElInput, ElMessage} from "element-plus";
 import {ref, reactive} from "vue";
 import router from "@/router";
-import {ElMessage} from "element-plus";
 import {postByJson} from "@/net";
-
-const registerForm = reactive({
-  username: '',
-  password: '',
-  password_repeat: '',
-  phone: '',
-  personid: '',
-  role: ''
-})
-
-const goToLogin = () => {
-  router.push("/login");
-};
-
-const options = [
-  {roleName: '用户', role: 'user'},
-  {roleName: '工作人员', role: 'worker'}
-]
 
 const rules = {
   username: [
@@ -44,16 +26,13 @@ const rules = {
   personid: [
     {required: true, message: '身份证号码不能为空', trigger: 'blur'},
     {validator: validatePersonId, trigger: 'blur'}
-  ],
-  role: [
-    {required: true, message: '请选择角色', trigger: 'change'}
   ]
 }
 
 function validatePasswordRepeat(rule, value, callback) {
   if (value === '') {
     callback(new Error('请再次输入密码'))
-  } else if (value !== registerForm.password) {
+  } else if (value !== forgotForm.password) {
     callback(new Error('两次输入的密码不一致'))
   } else {
     callback()
@@ -70,39 +49,51 @@ function validatePersonId(rule, value, callback) {
   }
 }
 
-const registerFormRef = ref()
+const forgotForm = reactive({
+  username: '',
+  password: '',
+  password_repeat: '',
+  phone: '',
+  personid: ''
+})
 
-const register = () => {
-  registerFormRef.value.validate((isValid) => {
+const forgotFormRef = ref()
+
+const resetPassword = () => {
+  forgotFormRef.value.validate((isValid) => {
     if (isValid) {
-      const registerData = {
-        username: registerForm.username,
-        password: registerForm.password,
-        phone: registerForm.phone,
-        personid: registerForm.personid,
-        role: registerForm.role
+      const resetData = {
+        username: forgotForm.username,
+        password: forgotForm.password,
+        phone: forgotForm.phone,
+        personid: forgotForm.personid
       };
 
-      postByJson('/api/auth/register-post', registerData, (message) => {
-        ElMessage.success(message)
-      })
+      postByJson('/api/auth/reset-password', resetData, (message) => {
+        ElMessage.success(message);
+        goToLogin();
+      });
     } else {
-      ElMessage.warning("请完整填写信息!")
+      ElMessage.warning("请完整填写信息!");
     }
-  })
-}
+  });
+};
+
+const goToLogin = () => {
+  router.push("/login");
+};
 </script>
 
 <template>
   <div style="margin-top: 20%">
-    <div style="font-size: 30px;font-weight: bold">注册</div>
-    <div style="font-size: 15px;color: rgb(128,128,128);margin-top: 5%">请输入信息进行注册</div>
+    <div style="font-size: 30px; font-weight: bold">重置密码</div>
+    <div style="font-size: 15px; color: rgb(128,128,128); margin-top: 5%">请输入信息进行密码重置</div>
   </div>
 
   <div style="margin: 0 15%">
-    <el-form ref="registerFormRef" :model="registerForm" :rules="rules" style="margin-top: 5%">
+    <el-form ref="forgotFormRef" :model="forgotForm" :rules="rules" style="margin-top: 5%">
       <el-form-item prop="username">
-        <el-input v-model="registerForm.username" placeholder="用户名" type="text">
+        <el-input v-model="forgotForm.username" placeholder="用户名" type="text">
           <template #prefix>
             <el-icon>
               <User/>
@@ -111,7 +102,7 @@ const register = () => {
         </el-input>
       </el-form-item>
       <el-form-item prop="password">
-        <el-input v-model="registerForm.password" placeholder="密码" type="password">
+        <el-input v-model="forgotForm.password" placeholder="新密码" type="password">
           <template #prefix>
             <el-icon>
               <Lock/>
@@ -120,7 +111,7 @@ const register = () => {
         </el-input>
       </el-form-item>
       <el-form-item prop="password_repeat">
-        <el-input v-model="registerForm.password_repeat" placeholder="重复密码" type="password">
+        <el-input v-model="forgotForm.password_repeat" placeholder="重复密码" type="password">
           <template #prefix>
             <el-icon>
               <Bell/>
@@ -129,7 +120,7 @@ const register = () => {
         </el-input>
       </el-form-item>
       <el-form-item prop="phone">
-        <el-input v-model="registerForm.phone" placeholder="电话号码" type="text">
+        <el-input v-model="forgotForm.phone" placeholder="电话号码" type="text">
           <template #prefix>
             <el-icon>
               <Message/>
@@ -138,7 +129,7 @@ const register = () => {
         </el-input>
       </el-form-item>
       <el-form-item prop="personid">
-        <el-input v-model="registerForm.personid" placeholder="身份证号" type="text">
+        <el-input v-model="forgotForm.personid" placeholder="身份证号" type="text">
           <template #prefix>
             <el-icon>
               <Link/>
@@ -146,29 +137,13 @@ const register = () => {
           </template>
         </el-input>
       </el-form-item>
-      <el-form-item prop="role">
-        <el-select v-model="registerForm.role" placeholder="选择你需要注册的身份"
-                   style="width: 100%">
-          <el-option
-              v-for="item in options"
-              :key="item.role"
-              :label="item.roleName"
-              :value="item.role"
-          />
-          <template #prefix>
-            <el-icon>
-              <Avatar/>
-            </el-icon>
-          </template>
-        </el-select>
-      </el-form-item>
     </el-form>
   </div>
 
   <div>
-    <el-button round style="margin-top: 10%;width: 30%" type="default" @click="register">注册</el-button>
-    <el-divider style="color: rgb(128,128,128);font-size: 15px;margin-top: 10%">已有账号</el-divider>
-    <el-button round style="margin-top: 0;width: 30%" type="info" @click="goToLogin">登录</el-button>
+    <el-button round style="margin-top: 10%; width: 30%" type="default" @click="resetPassword">重置密码</el-button>
+    <el-divider style="color: rgb(128,128,128); font-size: 15px; margin-top: 10%">回到登录</el-divider>
+    <el-button round style="margin-top: 0; width: 30%" type="info" @click="goToLogin">登录</el-button>
   </div>
 </template>
 

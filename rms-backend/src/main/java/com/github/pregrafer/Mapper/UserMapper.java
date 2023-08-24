@@ -4,6 +4,7 @@ import com.github.pregrafer.Entity.Account;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface UserMapper {
@@ -18,4 +19,10 @@ public interface UserMapper {
 
     @Select("SELECT COUNT(*) FROM register_list WHERE username = #{username} OR phone = #{phone} OR personid = #{personid}")
     int register_listCheck(String username, String phone, String personid);
+
+    @Update("UPDATE user_account SET password = #{password} WHERE username = #{username} AND phone = #{phone} AND personid = #{personid}")
+    boolean resetPassword(String username, String password, String phone, String personid);
+
+    @Select("SELECT role FROM user_account WHERE username = #{username}")
+    String getUseRoleByUserName(String username);
 }

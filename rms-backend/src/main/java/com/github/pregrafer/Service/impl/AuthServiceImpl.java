@@ -38,4 +38,18 @@ public class AuthServiceImpl implements AuthService {
         }
         return mapper.registerPost(username, (new BCryptPasswordEncoder()).encode(password), phone, personid, role);
     }
+
+    @Override
+    public boolean resetPassword(String username, String newPassword, String phone, String personid) {
+        if (mapper.user_accountCheck(username, phone, personid) > 0) {
+            String encryptedPassword = (new BCryptPasswordEncoder()).encode(newPassword);
+            return mapper.resetPassword(username, encryptedPassword, phone, personid);
+        }
+        return false;
+    }
+
+    @Override
+    public String getUserRoleByUserName(String username) {
+        return mapper.getUseRoleByUserName(username);
+    }
 }
