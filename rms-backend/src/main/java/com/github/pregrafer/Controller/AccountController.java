@@ -1,6 +1,7 @@
 package com.github.pregrafer.Controller;
 
-import com.github.pregrafer.Entity.RestBean;
+import com.github.pregrafer.Pojo.RegisterAccount;
+import com.github.pregrafer.Pojo.RestBean;
 import com.github.pregrafer.Service.AuthService;
 import jakarta.annotation.Resource;
 import lombok.Data;
@@ -8,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-public class RegisterPostController {
+public class AccountController {
     @Resource
     AuthService authService;
 
     @PostMapping("/register-post")
-    public RestBean<String> registerPost(@RequestBody RegisterRequest requestData) {
-        if (authService.registerPost(requestData.getUsername(), requestData.getPassword(), requestData.getPhone(), requestData.getPersonid(), requestData.getRole()))
+    public RestBean<String> registerPost(@RequestBody RegisterAccount registerAccount) {
+        if (authService.registerPost(registerAccount.getUsername(), registerAccount.getPassword(), registerAccount.getPhone(), registerAccount.getPersonid(), registerAccount.getRole()))
             return RestBean.success("注册申请发送成功!");
         else
             return RestBean.failure(402, "用户名/电话/身份证号已被注册!");
@@ -37,11 +38,6 @@ public class RegisterPostController {
         } else {
             return RestBean.failure(404, "获取角色失败");
         }
-    }
-
-    @Data
-    public static class RegisterRequest {
-        String username, password, phone, personid, role;
     }
 
     @Data

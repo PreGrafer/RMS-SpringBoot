@@ -28,6 +28,14 @@ function getByParam(url, requestData, success, failure = defaultFailure, error =
     }).catch(error);
 }
 
+function getData(url, success, error = defaultError) {
+    axios.get(url, {
+        withCredentials: true
+    }).then(data => {
+        success(data);
+    }).catch(error);
+}
+
 function post(url, data, success, failure = defaultFailure, error = defaultError) {
     axios.post(url, data, {
         headers: {
@@ -56,4 +64,4 @@ function postByJson(url, data, success, failure = defaultFailure, error = defaul
     }).catch(error)
 }
 
-export {get, getByParam, post, postByJson}
+export {get, getByParam, getData, post, postByJson}

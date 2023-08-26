@@ -6,6 +6,7 @@ import {get, post} from "@/net";
 import {ElMessage} from "element-plus";
 import router from "@/router";
 
+
 const loginForm = reactive({
   username: "",
   password: "",
@@ -24,14 +25,8 @@ const login = () => {
     post('/api/auth/login', loginData, (message) => {
       ElMessage.success(message)
       get(`/api/auth/get-role/${loginForm.username}`, (role) => {
-        if (role === 'user') {
-          router.push('/user');
-        } else if (role === 'worker') {
-          router.push('/worker');
-        } else if (role === 'admin') {
-          router.push('/admin');
-        }
-      })
+        router.push(`/${role}/${loginForm.username}`);
+      });
     })
   }
 }

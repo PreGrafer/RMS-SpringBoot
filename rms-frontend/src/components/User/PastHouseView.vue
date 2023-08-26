@@ -1,7 +1,4 @@
-<script>
-export default {
-  name: "PastHouseView"
-}
+<script setup>
 </script>
 
 <template>

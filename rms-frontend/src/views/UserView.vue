@@ -1,9 +1,11 @@
 <script setup>
 import router from "@/router";
+import {useRoute} from 'vue-router';
 import {get} from "@/net";
 import {ElMessage} from "element-plus";
 
-const defaultActive = 'account'
+
+const route = useRoute();
 const handleMenuSelect = (index) => {
   if (index === "exit") {
     get('/api/auth/logout', (message) => {
@@ -11,7 +13,7 @@ const handleMenuSelect = (index) => {
       router.push('/')
     })
   } else {
-    router.push(`/user/${index}`)
+    router.push(`/user/${route.params.username}/${index}`)
   }
 }
 </script>
@@ -24,12 +26,12 @@ const handleMenuSelect = (index) => {
           农民搬迁管理系统
         </div>
         <div style="text-align: center;font-size: 10px;color: ivory">
-          用户
+          用户 {{ this.$route.params.username }}
         </div>
       </el-header>
       <el-container>
-        <el-aside style="background-color: aqua;width: 10%">
-          <el-menu :default-active="defaultActive" active-text-color="#FFA500" background-color="#fff"
+        <el-aside style="width: 10%">
+          <el-menu active-text-color="#FFA500" background-color="#fff"
                    text-color="#000" @select="handleMenuSelect">
             <el-menu-item index="account">管理个人信息</el-menu-item>
             <el-menu-item index="use-house">申请搬迁住房</el-menu-item>

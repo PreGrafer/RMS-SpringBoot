@@ -1,6 +1,7 @@
 package com.github.pregrafer.Mapper;
 
-import com.github.pregrafer.Entity.Account;
+import com.github.pregrafer.Pojo.UserAccount;
+import com.github.pregrafer.Pojo.RegisterAccount;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -8,11 +9,16 @@ import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface UserMapper {
-    @Select("select * from user_account where username = #{text} or phone = #{text}")
-    Account findAccountByNameOrPhone(String text);
 
-    @Insert("INSERT INTO register_list(username, password, phone, personid, role) VALUES(#{username}, #{password}, #{phone}, #{personid}, #{role})")
-    boolean registerPost(String username, String password, String phone, String personid, String role);
+    @Insert("INSERT INTO person_info(personid) VALUES (#{personid})")
+    boolean insertPersonInfo(String personid);
+
+    @Insert("INSERT INTO user_account (username, password, phone, personid, role) VALUES " +
+            "(#{username}, #{password}, #{phone}, #{personid}, #{role})")
+    boolean insertUserAccount(RegisterAccount registerAccount);
+
+    @Select("select * from user_account where username = #{text} or phone = #{text}")
+    UserAccount findAccountByNameOrPhone(String text);
 
     @Select("SELECT COUNT(*) FROM user_account WHERE username = #{username} OR phone = #{phone} OR personid = #{personid}")
     int user_accountCheck(String username, String phone, String personid);

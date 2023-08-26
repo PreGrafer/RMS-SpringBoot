@@ -1,4 +1,4 @@
-package com.github.pregrafer.Entity;
+package com.github.pregrafer.Pojo;
 
 
 import lombok.Data;

@@ -84,7 +84,8 @@ const register = () => {
       };
 
       postByJson('/api/auth/register-post', registerData, (message) => {
-        ElMessage.success(message)
+        ElMessage.success(message);
+        goToLogin();
       })
     } else {
       ElMessage.warning("请完整填写信息!")

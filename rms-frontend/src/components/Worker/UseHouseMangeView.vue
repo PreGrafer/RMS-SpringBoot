@@ -1,7 +1,4 @@
-<script>
-export default {
-  name: "UseHouseMangeView"
-}
+<script setup>
 </script>
 
 <template>

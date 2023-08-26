@@ -1,9 +1,9 @@
-package com.github.pregrafer.Entity;
+package com.github.pregrafer.Pojo;
 
 import lombok.Data;
 
 @Data
-public class Account {
+public class UserAccount {
     int userid;
     String username, password, phone, personid, role;
 }
