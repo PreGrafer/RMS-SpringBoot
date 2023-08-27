@@ -112,7 +112,7 @@ const register = () => {
         </el-input>
       </el-form-item>
       <el-form-item prop="password">
-        <el-input v-model="registerForm.password" placeholder="密码" type="password">
+        <el-input v-model="registerForm.password" placeholder="密码" show-password type="password">
           <template #prefix>
             <el-icon>
               <Lock/>
@@ -121,7 +121,7 @@ const register = () => {
         </el-input>
       </el-form-item>
       <el-form-item prop="password_repeat">
-        <el-input v-model="registerForm.password_repeat" placeholder="重复密码" type="password">
+        <el-input v-model="registerForm.password_repeat" placeholder="重复密码" show-password type="password">
           <template #prefix>
             <el-icon>
               <Bell/>

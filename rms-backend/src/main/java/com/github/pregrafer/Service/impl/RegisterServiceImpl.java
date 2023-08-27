@@ -17,7 +17,7 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     public boolean passRegister(RegisterAccount registerAccount) {
-        return userMapper.insertPersonInfo(registerAccount.getPersonid()) && userMapper.insertUserAccount(registerAccount) && registerMapper.deleteByUsername(registerAccount.getUsername());
+        return userMapper.insertUserAccount(registerAccount) && registerMapper.deleteByUsername(registerAccount.getUsername());
     }
 
     @Override

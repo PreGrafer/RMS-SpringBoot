@@ -56,7 +56,7 @@ const goToForgot = () => {
         </el-icon>
       </template>
     </el-input>
-    <el-input v-model="loginForm.password" placeholder="密码" style="margin-top: 5%" type="password">
+    <el-input v-model="loginForm.password" placeholder="密码" show-password style="margin-top: 5%" type="password">
       <template #prefix>
         <el-icon>
           <Lock/>

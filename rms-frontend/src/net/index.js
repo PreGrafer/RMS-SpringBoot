@@ -15,16 +15,12 @@ function get(url, success, failure = defaultFailure, error = defaultError) {
     }).catch(error)
 }
 
-function getByParam(url, requestData, success, failure = defaultFailure, error = defaultError) {
+function getDataByParam(url, requestParam, success, error = defaultError) {
     axios.get(url, {
-        params: requestData,
+        params: requestParam,
         withCredentials: true
-    }).then(({data}) => {
-        if (data.success) {
-            success(data.message, data.status);
-        } else {
-            failure(data.message, data.status);
-        }
+    }).then(data => {
+        success(data);
     }).catch(error);
 }
 
@@ -64,4 +60,4 @@ function postByJson(url, data, success, failure = defaultFailure, error = defaul
     }).catch(error)
 }
 
-export {get, getByParam, getData, post, postByJson}
+export {get, getDataByParam, getData, post, postByJson}

@@ -29,7 +29,7 @@ const router = createRouter({
         {
             path: '/user',
             component: () => import('@/views/UserView.vue'),
-            meta: {requiresAuth: true, roles: ["user"]},
+            meta: {requiresAuth: true, role: "user"},
             children: [
                 {
                     path: ':username',
@@ -41,17 +41,12 @@ const router = createRouter({
                         {
                             path: 'account',
                             name: 'User-Account',
-                            component: () => import('@/components/User/AccountView.vue')
+                            component: () => import('@/components/All/AccountView.vue')
                         },
                         {
                             path: 'use-house',
                             name: 'Use-House',
                             component: () => import('@/components/User/UseHouseView.vue')
-                        },
-                        {
-                            path: 'past-house',
-                            name: 'Past-House',
-                            component: () => import('@/components/User/PastHouseView.vue')
                         }
                     ]
                 }
@@ -60,7 +55,7 @@ const router = createRouter({
         {
             path: '/worker',
             component: () => import('@/views/WorkView.vue'),
-            meta: {requiresAuth: true, roles: ["worker"]},
+            meta: {requiresAuth: true, role: "worker"},
             children: [
                 {
                     path: ':username',
@@ -72,17 +67,12 @@ const router = createRouter({
                         {
                             path: 'account',
                             name: 'Worker-Account',
-                            component: () => import('@/components/Worker/AccountView.vue')
+                            component: () => import('@/components/All/AccountView.vue')
                         },
                         {
                             path: 'houses',
                             name: 'Worker-Houses-Manage',
-                            component: () => import('@/components/Worker/HousesView.vue')
-                        },
-                        {
-                            path: 'add-house',
-                            name: 'Add-Houses',
-                            component: () => import('@/components/Worker/AddHousesView.vue')
+                            component: () => import('@/components/All/HousesView.vue')
                         },
                         {
                             path: 'register-manage',
@@ -101,15 +91,20 @@ const router = createRouter({
         {
             path: '/admin',
             component: () => import('@/views/AdminView.vue'),
-            meta: {requiresAuth: true, roles: ["admin"]},
+            meta: {requiresAuth: true, role: "admin"},
             children: [
                 {
                     path: ':username',
                     name: 'Admin-Main',
                     redirect: to => {
-                        return {path: `/admin/${to.params.username}/accounts`};
+                        return {path: `/admin/${to.params.username}/account`};
                     },
                     children: [
+                        {
+                            path: 'account',
+                            name: 'Admin-Account',
+                            component: () => import('@/components/All/AccountView.vue')
+                        },
                         {
                             path: 'accounts',
                             name: 'Account-Manage',
@@ -118,7 +113,7 @@ const router = createRouter({
                         {
                             path: 'houses',
                             name: 'Admin-Houses-Manage',
-                            component: () => import('@/components/Admin/HousesView.vue')
+                            component: () => import('@/components/All/HousesView.vue')
                         },
                         {
                             path: 'register-manage',

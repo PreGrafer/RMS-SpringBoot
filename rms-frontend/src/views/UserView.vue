@@ -35,7 +35,7 @@ const handleMenuSelect = (index) => {
                    text-color="#000" @select="handleMenuSelect">
             <el-menu-item index="account">管理个人信息</el-menu-item>
             <el-menu-item index="use-house">申请搬迁住房</el-menu-item>
-            <el-menu-item index="past-house">绑定搬迁来源</el-menu-item>
+            <el-menu-item index="service">申请搬迁服务</el-menu-item>
             <el-menu-item index="exit" style="background-color: indianred">退出登录</el-menu-item>
           </el-menu>
         </el-aside>

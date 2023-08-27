@@ -2,16 +2,29 @@ package com.github.pregrafer.Mapper;
 
 import com.github.pregrafer.Pojo.UserAccount;
 import com.github.pregrafer.Pojo.RegisterAccount;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
 
-    @Insert("INSERT INTO person_info(personid) VALUES (#{personid})")
-    boolean insertPersonInfo(String personid);
+    @Delete("DELETE FROM user_account WHERE userid= #{userid}")
+    boolean deleteUserById(int userid);
+
+    @Select("SELECT * FROM user_account")
+    List<UserAccount> getAccounts();
+
+    @Update("UPDATE user_account SET " +
+            "name = #{name}, " +
+            "gender = #{gender}, " +
+            "age = #{age}, " +
+            "health_status = #{health_status}, " +
+            "education_background = #{education_background}, " +
+            "work_experience = #{work_experience}, " +
+            "notes = #{notes} " +
+            "WHERE username = #{username} AND phone = #{phone} AND personid = #{personid}")
+    boolean updataUserAccountInfo(UserAccount userAccount);
 
     @Insert("INSERT INTO user_account (username, password, phone, personid, role) VALUES " +
             "(#{username}, #{password}, #{phone}, #{personid}, #{role})")

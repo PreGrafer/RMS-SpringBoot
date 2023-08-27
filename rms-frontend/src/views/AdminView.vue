@@ -32,6 +32,7 @@ const handleMenuSelect = (index) => {
         <el-aside style="width: 10%">
           <el-menu active-text-color="#FFA500" background-color="#fff"
                    text-color="#000" @select="handleMenuSelect">
+            <el-menu-item index="account">管理个人信息</el-menu-item>
             <el-menu-item index="accounts">管理账户信息</el-menu-item>
             <el-menu-item index="houses">管理住房信息</el-menu-item>
             <el-menu-item index="register-manage">管理注册申请</el-menu-item>
