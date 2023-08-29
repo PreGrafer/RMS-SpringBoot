@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17b27035-d05f-48ea-9954-d2e61be00201" name="更改" comment="完成所有功能">
+    <list default="true" id="17b27035-d05f-48ea-9954-d2e61be00201" name="更改" comment="修复bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/All/HouseManageView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/All/HouseManageView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +222,10 @@
       <workItem from="1693288209323" duration="7094000" />
       <workItem from="1693312381374" duration="1989000" />
       <workItem from="1693314531728" duration="288000" />
-      <workItem from="1693316442768" duration="221000" />
+      <workItem from="1693316442768" duration="242000" />
+      <workItem from="1693316724673" duration="193000" />
+      <workItem from="1693317007711" duration="12000" />
+      <workItem from="1693326268376" duration="685000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />
@@ -376,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693299391473</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="修复bug">
+      <option name="closed" value="true" />
+      <created>1693316679046</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1693316679046</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +419,8 @@
     <MESSAGE value="完成路由修正" />
     <MESSAGE value="完成大部分功能" />
     <MESSAGE value="完成所有功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成所有功能" />
+    <MESSAGE value="修复bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

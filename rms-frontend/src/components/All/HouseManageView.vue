@@ -82,7 +82,7 @@ function validatePrice(rule, value, callback) {
 }
 
 function validateVacancyStatus(rule, value, callback) {
-  if (value === '未使用' || /^已使用:/.test(value)) {
+  if (value === '未使用' || '审批中' || /^已使用:/.test(value)) {
     callback();
   } else {
     callback(new Error('房屋状态格式不正确'));
