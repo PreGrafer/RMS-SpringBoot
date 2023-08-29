@@ -30,6 +30,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -115,7 +116,7 @@
       <recent name="D:\WEB\RMS-SpringBoot" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RmsBackendApplication">
+  <component name="RunManager" selected="npm.run dev">
     <configuration name="RmsBackendApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rms-backend" />
       <extension name="coverage">
@@ -221,6 +222,7 @@
       <workItem from="1693288209323" duration="7094000" />
       <workItem from="1693312381374" duration="1989000" />
       <workItem from="1693314531728" duration="288000" />
+      <workItem from="1693316442768" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />

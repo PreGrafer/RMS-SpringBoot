@@ -1,9 +1,8 @@
 package com.github.pregrafer.Mapper;
 
-import com.github.pregrafer.Controller.AccountController;
+import com.github.pregrafer.Entity.RegisterAccount;
 import com.github.pregrafer.Entity.SimpleUserInfo;
 import com.github.pregrafer.Entity.UserAccount;
-import com.github.pregrafer.Entity.RegisterAccount;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
