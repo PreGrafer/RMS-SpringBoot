@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import {useStore} from "@/stores";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -6,8 +7,9 @@ const router = createRouter({
         {
             path: '/',
             name: 'Welcome',
-            redirect: "/login",
+            redirect: '/login',
             component: () => import('@/views/WelcomeView.vue'),
+            meta: {requiresAuth: false},
             children: [
                 {
                     path: '/login',
@@ -28,103 +30,106 @@ const router = createRouter({
         },
         {
             path: '/user',
+            name: 'User-Main',
+            redirect: '/user/account',
             component: () => import('@/views/UserView.vue'),
             meta: {requiresAuth: true, role: "user"},
             children: [
                 {
-                    path: ':username',
-                    name: 'User-Main',
-                    redirect: to => {
-                        return {path: `/user/${to.params.username}/account`};
-                    },
-                    children: [
-                        {
-                            path: 'account',
-                            name: 'User-Account',
-                            component: () => import('@/components/All/AccountView.vue')
-                        },
-                        {
-                            path: 'use-house',
-                            name: 'Use-House',
-                            component: () => import('@/components/User/UseHouseView.vue')
-                        }
-                    ]
+                    path: 'account',
+                    name: 'User-Account',
+                    component: () => import('@/components/All/AccountView.vue')
+                },
+                {
+                    path: 'use-house',
+                    name: 'Use-House',
+                    component: () => import('@/components/User/UseHouseView.vue')
+                },
+                {
+                    path: 'house-app',
+                    name: 'House-Application',
+                    component: () => import('@/components/User/HouseApplicationView.vue')
+                },
+                {
+                    path: 'house-app/:house',
+                    name: 'Single-House',
+                    component: () => import('@/components/User/HouseAppInfoView.vue')
                 }
             ]
         },
         {
             path: '/worker',
+            name: 'Worker-Main',
+            redirect: '/worker/account',
             component: () => import('@/views/WorkView.vue'),
             meta: {requiresAuth: true, role: "worker"},
             children: [
                 {
-                    path: ':username',
-                    name: 'Worker-Main',
-                    redirect: to => {
-                        return {path: `/worker/${to.params.username}/account`};
-                    },
-                    children: [
-                        {
-                            path: 'account',
-                            name: 'Worker-Account',
-                            component: () => import('@/components/All/AccountView.vue')
-                        },
-                        {
-                            path: 'houses',
-                            name: 'Worker-Houses-Manage',
-                            component: () => import('@/components/All/HousesView.vue')
-                        },
-                        {
-                            path: 'register-manage',
-                            name: 'User-Register-Manage',
-                            component: () => import('@/components/Worker/UserRegisterListView.vue')
-                        },
-                        {
-                            path: 'use-house-manage',
-                            name: 'User-House-Manage',
-                            component: () => import('@/components/Worker/UseHouseMangeView.vue')
-                        }
-                    ]
+                    path: 'account',
+                    name: 'Worker-Account',
+                    component: () => import('@/components/All/AccountView.vue')
+                },
+                {
+                    path: 'houses',
+                    name: 'Worker-Houses-Manage',
+                    component: () => import('@/components/All/HousesView.vue')
+                },
+                {
+                    path: 'houses/:house_id',
+                    name: 'Worker-House-Manage',
+                    component: () => import('@/components/All/HouseManageView.vue')
+                },
+                {
+                    path: 'register-manage',
+                    name: 'User-Register-Manage',
+                    component: () => import('@/components/Worker/UserRegisterListView.vue')
+                },
+                {
+                    path: 'use-house-manage',
+                    name: 'User-House-Manage',
+                    component: () => import('@/components/Worker/UseHouseMangeView.vue')
                 }
             ]
         },
         {
             path: '/admin',
+            name: 'Admin-Main',
+            redirect: '/admin/account',
             component: () => import('@/views/AdminView.vue'),
             meta: {requiresAuth: true, role: "admin"},
             children: [
                 {
-                    path: ':username',
-                    name: 'Admin-Main',
-                    redirect: to => {
-                        return {path: `/admin/${to.params.username}/account`};
-                    },
-                    children: [
-                        {
-                            path: 'account',
-                            name: 'Admin-Account',
-                            component: () => import('@/components/All/AccountView.vue')
-                        },
-                        {
-                            path: 'accounts',
-                            name: 'Account-Manage',
-                            component: () => import('@/components/Admin/AccountsView.vue')
-                        },
-                        {
-                            path: 'houses',
-                            name: 'Admin-Houses-Manage',
-                            component: () => import('@/components/All/HousesView.vue')
-                        },
-                        {
-                            path: 'register-manage',
-                            name: 'Register-Manage',
-                            component: () => import('@/components/Admin/RegisterListView.vue')
-                        }
-                    ]
+                    path: 'account',
+                    name: 'Admin-Account',
+                    component: () => import('@/components/All/AccountView.vue')
+                },
+                {
+                    path: 'accounts',
+                    name: 'Accounts-Manage',
+                    component: () => import('@/components/Admin/AccountsView.vue')
+                },
+                {
+                    path: 'accounts/:manage',
+                    name: 'Admin-Account-Manage',
+                    component: () => import('@/components/Admin/AccountManageView.vue')
+                },
+                {
+                    path: 'houses',
+                    name: 'Admin-Houses-Manage',
+                    component: () => import('@/components/All/HousesView.vue')
+                },
+                {
+                    path: 'houses/:house_id',
+                    name: 'Admin-House-Manage',
+                    component: () => import('@/components/All/HouseManageView.vue')
+                },
+                {
+                    path: 'register-manage',
+                    name: 'Register-Manage',
+                    component: () => import('@/components/Admin/RegisterListView.vue')
                 }
             ]
         }
     ]
 })
-
 export default router

@@ -4,45 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17b27035-d05f-48ea-9954-d2e61be00201" name="更改" comment="完成路由修正">
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Controller/HouseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Controller/InfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Mapper/HouseMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Pojo/House.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/HouseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/InfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/impl/HouseServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/impl/InfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rms-frontend/src/components/All/AccountView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e9ceed0-eac7-4a4c-9da7-baa6c8434b93.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e9ceed0-eac7-4a4c-9da7-baa6c8434b93.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e9ceed0-eac7-4a4c-9da7-baa6c8434b93/storage_v2/_src_/schema/rms.mLkBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e9ceed0-eac7-4a4c-9da7-baa6c8434b93/storage_v2/_src_/schema/rms.mLkBAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="17b27035-d05f-48ea-9954-d2e61be00201" name="更改" comment="完成所有功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rms-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Pojo/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Pojo/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/impl/RegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/rms-backend/src/main/java/com/github/pregrafer/Service/impl/RegisterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Admin/AccountsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Admin/AccountsView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Admin/HousesView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/All/HousesView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Admin/RegisterListView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Admin/RegisterListView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/User/AccountView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/User/PastHouseView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/ForgotPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/ForgotPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/LoginPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/RegisterPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Welcome/RegisterPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Worker/AccountView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Worker/AddHousesView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/components/Worker/AddHousesView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/components/Worker/HousesView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/net/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/net/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/views/AdminView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/views/AdminView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/views/UserView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/views/UserView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rms-frontend/src/views/WorkView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/rms-frontend/src/views/WorkView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +17,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Composition API Component" />
-        <option value="Vue Options API Component" />
         <option value="Interface" />
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
+        <option value="Vue Options API Component" />
         <option value="Class" />
       </list>
     </option>
@@ -68,8 +34,6 @@
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;PreGrafer&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">
@@ -113,18 +77,18 @@
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WEB/RMS-SpringBoot/rms-frontend/src/components/Worker&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WEB/RMS-SpringBoot/rms-frontend/src/components/Admin&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.3689655&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;2552fca24d06eb715d7948df267782c6&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Program Files (x86)\\IntelliJ IDEA 2022.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -141,6 +105,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WEB\RMS-SpringBoot\rms-frontend\src\components\Admin" />
       <recent name="D:\WEB\RMS-SpringBoot\rms-frontend\src\components\Worker" />
       <recent name="D:\WEB\RMS-SpringBoot\rms-frontend\public" />
     </key>
@@ -248,6 +213,14 @@
       <workItem from="1693135281924" duration="84000" />
       <workItem from="1693135368522" duration="683000" />
       <workItem from="1693136053927" duration="7114000" />
+      <workItem from="1693151183996" duration="10370000" />
+      <workItem from="1693215170525" duration="14912000" />
+      <workItem from="1693231122163" duration="1100000" />
+      <workItem from="1693232230584" duration="8244000" />
+      <workItem from="1693241096849" duration="204000" />
+      <workItem from="1693288209323" duration="7094000" />
+      <workItem from="1693312381374" duration="1989000" />
+      <workItem from="1693314531728" duration="288000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />
@@ -377,7 +350,31 @@
       <option name="project" value="LOCAL" />
       <updated>1693049838179</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="完成大部分功能">
+      <option name="closed" value="true" />
+      <created>1693151221064</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1693151221064</updated>
+    </task>
+    <task id="LOCAL-00018" summary="完成所有功能">
+      <option name="closed" value="true" />
+      <created>1693299329034</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1693299329034</updated>
+    </task>
+    <task id="LOCAL-00019" summary="完成所有功能">
+      <option name="closed" value="true" />
+      <created>1693299391473</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1693299391473</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +404,9 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="完成前端布局" />
     <MESSAGE value="完成路由修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成路由修正" />
+    <MESSAGE value="完成大部分功能" />
+    <MESSAGE value="完成所有功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成所有功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

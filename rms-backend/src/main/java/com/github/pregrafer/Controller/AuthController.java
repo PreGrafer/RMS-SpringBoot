@@ -1,15 +1,11 @@
 package com.github.pregrafer.Controller;
 
-import com.github.pregrafer.Mapper.UserMapper;
-import com.github.pregrafer.Pojo.RegisterAccount;
-import com.github.pregrafer.Pojo.RestBean;
-import com.github.pregrafer.Pojo.UserAccount;
+import com.github.pregrafer.Entity.RegisterAccount;
+import com.github.pregrafer.Entity.RestBean;
 import com.github.pregrafer.Service.AuthService;
 import jakarta.annotation.Resource;
 import lombok.Data;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/auth")

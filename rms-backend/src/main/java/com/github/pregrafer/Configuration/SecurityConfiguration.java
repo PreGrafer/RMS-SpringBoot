@@ -1,7 +1,7 @@
 package com.github.pregrafer.Configuration;
 
 import com.alibaba.fastjson.JSONObject;
-import com.github.pregrafer.Pojo.RestBean;
+import com.github.pregrafer.Entity.RestBean;
 import com.github.pregrafer.Service.AuthService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;

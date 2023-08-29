@@ -3,16 +3,21 @@ import router from "@/router";
 import {get} from "@/net";
 import {ElMessage} from "element-plus";
 import {useRoute} from "vue-router";
+import {useStore} from "@/stores";
 
+
+const store = useStore()
 const route = useRoute();
 const handleMenuSelect = (index) => {
   if (index === "exit") {
     get('/api/auth/logout', (message) => {
       ElMessage.success(message)
       router.push('/')
+      store.auth.username = null
+      store.auth.role = null
     })
   } else {
-    router.push(`/worker/${route.params.username}/${index}`)
+    router.push(`/worker/${index}`)
   }
 }
 </script>
@@ -25,7 +30,7 @@ const handleMenuSelect = (index) => {
           农民搬迁管理系统
         </div>
         <div style="text-align: center;font-size: 10px;color: ivory">
-          工作人员 {{ this.$route.params.username }}
+          工作人员 {{ store.auth.username }}
         </div>
       </el-header>
       <el-container>

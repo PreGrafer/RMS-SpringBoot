@@ -1,6 +1,6 @@
 package com.github.pregrafer.Mapper;
 
-import com.github.pregrafer.Pojo.RegisterAccount;
+import com.github.pregrafer.Entity.RegisterAccount;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

@@ -2,7 +2,7 @@ package com.github.pregrafer.Service.impl;
 
 import com.github.pregrafer.Mapper.RegisterMapper;
 import com.github.pregrafer.Mapper.UserMapper;
-import com.github.pregrafer.Pojo.RegisterAccount;
+import com.github.pregrafer.Entity.RegisterAccount;
 import com.github.pregrafer.Service.RegisterService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;

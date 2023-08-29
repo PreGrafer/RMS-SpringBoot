@@ -5,8 +5,10 @@ import {reactive} from "vue";
 import {get, post} from "@/net";
 import {ElMessage} from "element-plus";
 import router from "@/router";
+import {useStore} from "@/stores";
 
 
+const store = useStore()
 const loginForm = reactive({
   username: "",
   password: "",
@@ -24,8 +26,11 @@ const login = () => {
     };
     post('/api/auth/login', loginData, (message) => {
       ElMessage.success(message)
-      get(`/api/auth/get-role/${loginForm.username}`, (role) => {
-        router.push(`/${role}/${loginForm.username}`);
+      get(`/api/account/me`, (message) => {
+        store.auth.userid = message.userid
+        store.auth.username = message.username
+        store.auth.role = message.role
+        router.push(`/${message.role}`);
       });
     })
   }

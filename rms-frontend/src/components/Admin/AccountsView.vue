@@ -2,7 +2,10 @@
 import {getData, post} from "@/net";
 import {ref} from "vue";
 import {ElMessage} from "element-plus";
+import {useRoute} from "vue-router";
+import router from "@/router";
 
+const route = useRoute();
 const getRoleText = (role) => {
   switch (role) {
     case 'user':
@@ -21,6 +24,9 @@ const fetchAccountList = () => {
     accountList.value = data.data;
   })
 };
+const changeRow = (row) => {
+  router.push(`/admin/accounts/${row.username}`)
+}
 
 const deleteRow = (row) => {
   post("/api/account/delete-account", {userid: row.userid}, (message) => {
@@ -33,6 +39,7 @@ fetchAccountList();
 </script>
 
 <template>
+
   <el-table :data="accountList" empty-text="无数据" height="100%" max-height="500" stripe style="width: 100%">
     <el-table-column fixed="left" label="用户编号" prop="userid" width="100"/>
     <el-table-column label="用户名" prop="username" width="100"/>
@@ -50,11 +57,11 @@ fetchAccountList();
     <el-table-column label="健康状态" prop="health_status" width="200"/>
     <el-table-column label="教育背景" prop="education_background" width="200"/>
     <el-table-column label="工作经验" prop="work_experience" width="200"/>
-    <el-table-column label="备注" prop="notes" width="200"/>
+    <el-table-column label="备注" prop="note" width="200"/>
 
     <el-table-column fixed="right" label="操作项" width="200">
       <template #default="{ row }">
-        <el-button round size="small" type="success" @click="change(row)">修改</el-button>
+        <el-button round size="small" type="success" @click="changeRow(row)">修改</el-button>
         <el-button round size="small" type="danger" @click="deleteRow(row)">删除</el-button>
       </template>
     </el-table-column>

@@ -1,12 +1,10 @@
 package com.github.pregrafer.Controller;
 
 import com.github.pregrafer.Mapper.RegisterMapper;
-import com.github.pregrafer.Mapper.UserMapper;
-import com.github.pregrafer.Pojo.RegisterAccount;
-import com.github.pregrafer.Pojo.RestBean;
+import com.github.pregrafer.Entity.RegisterAccount;
+import com.github.pregrafer.Entity.RestBean;
 import com.github.pregrafer.Service.RegisterService;
 import jakarta.annotation.Resource;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

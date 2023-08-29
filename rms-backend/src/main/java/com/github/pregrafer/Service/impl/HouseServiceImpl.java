@@ -1,7 +1,10 @@
 package com.github.pregrafer.Service.impl;
 
+import com.github.pregrafer.Entity.HouseApplication;
+import com.github.pregrafer.Entity.UseHouseInfo;
 import com.github.pregrafer.Mapper.HouseMapper;
-import com.github.pregrafer.Pojo.House;
+import com.github.pregrafer.Entity.House;
+import com.github.pregrafer.Mapper.UseHouseMapper;
 import jakarta.annotation.Resource;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -9,11 +12,52 @@ import com.github.pregrafer.Service.HouseService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.temporal.ChronoUnit;
+
 @Service
 public class HouseServiceImpl implements HouseService {
 
     @Resource
     HouseMapper houseMapper;
+    @Resource
+    UseHouseMapper useHouseMapper;
+
+    @Override
+    public boolean passApplication(UseHouseInfo useHouseInfo) {
+        return houseMapper.updateStatus(useHouseInfo.getHouse_id(), "已使用:" + useHouseInfo.getUsername()) && useHouseMapper.updateStatus(useHouseInfo.getApplication_id(), "已审批");
+    }
+
+    @Override
+    public boolean rejectApplication(UseHouseInfo useHouseInfo) {
+        return houseMapper.updateStatus(useHouseInfo.getHouse_id(), "未使用") && useHouseMapper.updateStatus(useHouseInfo.getApplication_id(), "未通过");
+    }
+
+    @Override
+    public boolean postApplication(HouseApplication houseApplication) {
+        House houseById = houseMapper.findHouseById(houseApplication.getHouse_id());
+        String rentOrSale = houseById.getRent_or_sale();
+        if (rentOrSale.equals("出租")) {
+            double pricePerMonth = houseById.getPrice();
+            long monthsBetween = ChronoUnit.MONTHS.between(
+                    houseApplication.getStart_date(), houseApplication.getEnd_date());
+
+            // 如果不足一个月，按一个月计算租金
+            if (houseApplication.getStart_date().plusMonths(monthsBetween).isBefore(houseApplication.getEnd_date())) {
+                monthsBetween++;
+            }
+
+            double totalAmount = pricePerMonth * monthsBetween;
+            houseApplication.setMoney(totalAmount);
+        } else if (rentOrSale.equals("售卖")) {
+            houseApplication.setMoney(houseById.getPrice());
+        }
+        return houseMapper.updateStatus(houseApplication.getHouse_id(), "审批中") && useHouseMapper.postApplication(houseApplication);
+    }
+
+    @Override
+    public boolean updateHouseInfo(House house) {
+        return houseMapper.updateHouseInfo(house);
+    }
 
     @Override
     public boolean deleteHouse(int house_id) {
@@ -37,9 +81,10 @@ public class HouseServiceImpl implements HouseService {
                     house.setFloor((int) row.getCell(3).getNumericCellValue());
                     house.setDoor_number((int) row.getCell(4).getNumericCellValue());
                     house.setArea(row.getCell(5).getNumericCellValue());
-                    house.setRent_or_sale(row.getCell(6).getNumericCellValue());
-                    house.setVacancy_status(row.getCell(7).toString());
-                    house.setNote(row.getCell(8).toString());
+                    house.setRent_or_sale(row.getCell(6).toString());
+                    house.setPrice(row.getCell(7).getNumericCellValue());
+                    house.setVacancy_status(row.getCell(8).toString());
+                    house.setNote(row.getCell(9).toString());
 
                     houseMapper.addHouse(house);
                 }

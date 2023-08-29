@@ -2,7 +2,10 @@
 import {getData, post} from "@/net";
 import {ref} from "vue";
 import {ElMessage, genFileId} from 'element-plus'
+import router from "@/router";
+import {useStore} from "@/stores";
 
+const store = useStore();
 const upload = ref();
 
 const handleExceed = (files) => {
@@ -29,6 +32,10 @@ const fetchHouseList = () => {
     houseList.value = data.data;
   })
 };
+const change = (row) => {
+  router.push(`/${store.auth.role}/houses/${row.house_id}`)
+}
+
 const deleteRow = (row) => {
   post("/api/house/delete-house", {house_id: row.house_id}, (message) => {
     ElMessage.success(message);
@@ -42,18 +49,14 @@ fetchHouseList();
 <template>
   <el-table :data="houseList" empty-text="无数据" height="100%" max-height="500" stripe style="width: 100%">
     <el-table-column label="房屋编号" prop="house_id" width="100"/>
-    <el-table-column label="小区名" prop="place_name"/>
-    <el-table-column label="单元号-楼号-楼层-房门号" width="200">
+    <el-table-column label="位置" width="200">
       <template #default="{ row }">
-        {{ `${row.unit_number}-${row.building_number}-${row.floor}-${row.door_number}` }}
+        {{ `${row.place_name}:${row.unit_number}单元-${row.building_number}号楼-${row.floor}层-${row.door_number}` }}
       </template>
     </el-table-column>
-    <!--    <el-table-column label="单元号" prop="unit_number"/>-->
-    <!--    <el-table-column label="楼号" prop="building_number"/>-->
-    <!--    <el-table-column label="楼层" prop="floor"/>-->
-    <!--    <el-table-column label="房门号" prop="door_number"/>-->
     <el-table-column label="面积/㎡" prop="area"/>
-    <el-table-column label="租售价格/￥" prop="rent_or_sale"/>
+    <el-table-column label="使用" prop="rent_or_sale"/>
+    <el-table-column label="价格/￥" prop="price"/>
     <el-table-column label="房屋状态" prop="vacancy_status"/>
     <el-table-column label="备注" prop="note"/>
     <el-table-column fixed="right" label="操作项" width="200">
