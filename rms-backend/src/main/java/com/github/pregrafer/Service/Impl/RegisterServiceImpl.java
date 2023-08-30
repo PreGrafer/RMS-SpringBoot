@@ -1,4 +1,4 @@
-package com.github.pregrafer.Service.impl;
+package com.github.pregrafer.Service.Impl;
 
 import com.github.pregrafer.Mapper.RegisterMapper;
 import com.github.pregrafer.Mapper.UserMapper;
